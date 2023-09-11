@@ -1,0 +1,51 @@
+/**
+ * Prevents students from using Minecrafts2's Blooket cheats.
+ * 
+ * This function disables any cheats or hacks that students might try to use while playing Blooket on Minecrafts2.
+ * 
+ * @returns {void}
+ * 
+ * @example
+ * preventBlooketCheats();
+ */
+function preventBlooketCheats() {
+    // Disable right-click context menu
+    document.addEventListener('contextmenu', function(event) {
+        event.preventDefault();
+    });
+
+    // Disable inspect element
+    document.addEventListener('keydown', function(event) {
+        if (event.keyCode === 123) {
+            event.preventDefault();
+        }
+    });
+
+    // Disable console
+    Object.defineProperty(console, '_commandLineAPI', {
+        get: function() {
+            throw 'Console is disabled';
+        }
+    });
+
+    // Disable network requests
+    XMLHttpRequest.prototype.open = function() {
+        throw 'Network requests are disabled';
+    };
+
+    // Disable alert, prompt, and confirm dialogs
+    window.alert = function() {
+        throw 'Alert dialogs are disabled';
+    };
+
+    window.prompt = function() {
+        throw 'Prompt dialogs are disabled';
+    };
+
+    window.confirm = function() {
+        throw 'Confirm dialogs are disabled';
+    };
+}
+
+// Usage
+preventBlooketCheats();
