@@ -1,7 +1,7 @@
 /**
  * Prevents students from using Minecrafts2's Blooket cheats.
  * 
- * This function disables any cheats or hacks that students might try to use while playing Blooket on Minecrafts2.
+ * This function disables any cheats or hacks that students might try to use while playing Blooket.
  * 
  * @returns {void}
  * 
